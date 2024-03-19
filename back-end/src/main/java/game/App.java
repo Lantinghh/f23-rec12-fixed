@@ -38,9 +38,9 @@ public class App extends SimpleWebServer {
         if (uri.startsWith("/api")) {
 
             Map<String, String> params = session.getParms();
-            if (uri.equals("/api/newgame")) {
+            if ("/api/newgame".equals(uri)) {
                 this.game = new Game();
-            } else if (uri.equals("/api/play")) {
+            } else if ("/api/play".equals(uri)) {
                 // e.g., /play?x=1&y=1
                 this.game = this.game.play(Integer.parseInt(params.get("x")), Integer.parseInt(params.get("y")));
             }
